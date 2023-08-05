@@ -98,7 +98,7 @@ model.compile(loss = 'sparse_categorical_crossentropy', optimizer = 'adam', metr
 
 model.summary()
 
-model.fit(x_train, y_train, epochs = 50, batch_size= 32)
+model.fit(x_train, y_train, epochs = 50, batch_size= 64)
 
 loss, accuracy = model.evaluate(x_test, y_test)
 
