@@ -19,8 +19,8 @@ def CatchPICFromVideo(path_name, window_name="GET_FACE", camera_idx=0, catch_pic
     cv2.namedWindow(window_name)
     # 影片來源，可以來自一段已存好的影片，也可以直接用攝影機
     cap = cv2.VideoCapture(camera_idx)#cap = cv2.VideoCapture(0)打開預設的攝影機
-    #打开影片
-    #cap =cv2.VideoCapture("H:/movie.mp4")
+    
+    #cap =cv2.VideoCapture("H:/movie.mp4")#打開影片
     # 告訴OpenCV使用人臉辨識分類器
     classfier = cv2.CascadeClassifier("D:/Anaconda3/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml")
 
@@ -48,7 +48,7 @@ def CatchPICFromVideo(path_name, window_name="GET_FACE", camera_idx=0, catch_pic
 
 2 scaleFactor這個是每次縮小圖像的比例，預設是1.1 ，我這裡選用1.2
 
-3 minNeighbors 它表明如果有15個框都重疊一起了，那這里肯定是臉部
+3 minNeighbors 它表明如果有15個框都重疊一起了，那這裡肯定是臉部
 
 我以前是 minNeighbors=3容易判斷錯誤，有些不是臉部也給標記起來了，在我看來，minNeighbors可以提高精度。
 
@@ -125,4 +125,4 @@ if __name__ == '__main__':
 
 #def CatchPICFromVideo(window_name, camera_idx, catch_pic_num, path_name):
 
-#在函數定義中，幾個參數，反別是視窗名字，攝影機系列號，捕捉照片數量，以及存儲路徑
+#在函數定義中，幾個參數，分別是視窗名字，攝影機系列號，捕捉照片數量，以及存儲路徑
