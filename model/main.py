@@ -45,8 +45,6 @@ if __name__ == '__main__':
                 if len(image) == 0:
                    continue 
                 image = cv2.resize(image, (64,64))  #影像畫素大小一致
-                roi = image.astype("float") / 255.0
-                img_pixels = img_to_array(roi)
                 img_pixels = np.expand_dims(img_pixels, axis = 0)
                 faceID = model.predict(img_pixels)
                 faceID = np.argmax(faceID, axis=1)
