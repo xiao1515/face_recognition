@@ -19,7 +19,7 @@ def CatchPICFromVideo(path_name, window_name="GET_FACE", camera_idx=0, catch_pic
     cv2.namedWindow(window_name)
     # 影片來源，可以來自一段已存好的影片，也可以直接用攝影機
     cap = cv2.VideoCapture(camera_idx)#cap = cv2.VideoCapture(0)打開預設的攝影機
-    
+
     #cap =cv2.VideoCapture("H:/movie.mp4")#打開影片
     # 告訴OpenCV使用人臉辨識分類器
     classfier = cv2.CascadeClassifier("D:/Anaconda3/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml")
