@@ -10,7 +10,7 @@ from keras.models import Model
 
 if __name__ == '__main__':
     # 載入訓練好的模型
-    model = tf.keras.models.load_model(r'D:\face_data\model_2.h5')
+    model = tf.keras.models.load_model(r'D:\face_data\model_face.h5')
 
     # 框住人臉的矩形邊框顏色
     color = (0, 255, 0)
