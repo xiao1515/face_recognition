@@ -67,7 +67,7 @@ print(y_test)
 #------------------------------------------------------------------------------------
 # 該模型為深度CNN，使用4層CNN，中間穿插MaxPoolin與Dropout，降低運算時間與減少模型複雜度。
 
-def build_model(input_shape, nb_classes=2):
+def build_model(input_shape, nb_classes=3):
     img_input = Input(shape=input_shape)
     
     x1 = Conv2D(32, (3, 3), activation="relu", padding="same", strides=(1, 1))(img_input)
