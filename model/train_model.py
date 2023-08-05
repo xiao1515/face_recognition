@@ -85,7 +85,7 @@ def build_model(input_shape, nb_classes=2):
     conv_input = Flatten()(x4)
     dense_result = Dense(512, activation="relu")(conv_input)
     drop_result = Dropout(rate=0.5)(dense_result)
-    # 该结果为[0, 1]类似这样的矩阵，矩阵中第一个值为我们的判断结果
+
     output = Dense(nb_classes, activation="softmax")(drop_result)
     
     model = Model(img_input, output)
@@ -102,4 +102,4 @@ model.fit(x_train, y_train, epochs = 50, batch_size= 32)
 
 loss, accuracy = model.evaluate(x_test, y_test)
 
-tf.keras.models.save_model(model,r'D:\face_data\model_2.h5')
+tf.keras.models.save_model(model,r'D:\face_data\model_face.h5')
