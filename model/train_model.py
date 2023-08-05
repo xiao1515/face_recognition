@@ -65,7 +65,7 @@ print(len(x_train),len(y_train),len(x_test),len(y_test)) #700 700 300 300
 print(y_test)
 
 #------------------------------------------------------------------------------------
-# 該模型為深度CNN，使用4層CNN，中間穿插MaxPoolin與Dropout，降低運算時間與減少模型複雜度。
+# 該模型為深度CNN，使用6層CNN，中間穿插MaxPoolin與Dropout，降低運算時間與減少模型複雜度。
 
 def build_model(input_shape, nb_classes=3):
     img_input = Input(shape=input_shape)
@@ -81,8 +81,13 @@ def build_model(input_shape, nb_classes=3):
     x4 = Conv2D(64, (3, 3), padding="same", strides=(1, 1), activation="relu")(x3)
     x4 = MaxPooling2D(pool_size=(2, 2))(x4)
     x4 = Dropout(rate=0.25)(x4)
+    x5 = Conv2D(64, (3, 3), padding="same", strides=(1, 1), activation="relu")(x4)
+
+    x6 = Conv2D(64, (3, 3), padding="same", strides=(1, 1), activation="relu")(x5)
+    x6 = MaxPooling2D(pool_size=(2, 2))(x6)
+    x6 = Dropout(rate=0.2)(x6)
     
-    conv_input = Flatten()(x4)
+    conv_input = Flatten()(x6)
     dense_result = Dense(512, activation="relu")(conv_input)
     drop_result = Dropout(rate=0.5)(dense_result)
 
